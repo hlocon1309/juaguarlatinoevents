@@ -1,0 +1,117 @@
+{% block document %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    {% block title %}<title>Jaguar Latino Events</title> {% endblock title %}
+
+    {% endblock head %}
+
+</head>
+
+<body>
+
+{% block header %}
+<header class="header">
+    
+    <a href="#" class="logo"><span>J</span>aguar <span>L</span>atino <span>E</span>vents</a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#service">services</a>
+        <a href="#about">about</a>
+        <a href="#price">events</a>
+        <a href="#contact">contact</a>
+        <a href="#home">login</a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+</header>
+{% endblock header %}
+
+{% block page_content %}
+{% endblock page_content %}
+
+{% block home %}
+{% endblock home %}
+
+{% block services %}
+{% endblock services %}
+
+{% block about %}
+{% endblock about %}
+
+{% block prices %}
+{% endblock prices %}
+
+{% block contact_form %}
+{% endblock contact_form %}
+
+{% block footer %}
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+
+            <h3>quick links</h3>
+
+            <a href="#home"> <i class="fas fa-arrow-right"></i> Home</a>
+            <a href="#service"> <i class="fas fa-arrow-right"></i> Services</a>
+            <a href="#about"> <i class="fas fa-arrow-right"></i> About</a>
+            <a href="#price"> <i class="fas fa-arrow-right"></i> Events</a>
+            <a href="#contact"> <i class="fas fa-arrow-right"></i> Contact</a>
+
+        </div>
+
+        <div class="box">
+
+            <h3>contact info</h3>
+
+            <a href="#"> <i class="fas fa-phone"></i> +7(925)4913821</a>
+            <a href="#"> <i class="fas fa-envelope"></i>jaguar@jaguarlatinoevents.com</a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Moscow, Russia - 109724</a>
+
+        </div>
+
+        <div class="box">
+
+            <h3>follow us</h3>
+
+            <a href="#"> <i class="fab fa-telegram"></i> Telegram </a>
+            <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+
+        </div>
+
+    </div>
+
+    <div class="credit">created by <span>Jaguar Latino Events</span> | all rights reserved </div>
+   
+</section>
+{% endblock footer %}
+
+
+{% block scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock scripts %}
+
+</body>
+</html>
+
+{% endblock document %}

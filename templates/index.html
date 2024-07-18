@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %} <title>Inicio</title> {% endblock title %}
+
+{% block home %}
+<section class="home" id="home">
+    <div class="content">
+        <h3>¡que viva la fiesta latina! the best <span>event organizers </span>in moscow</h3>
+        <a href="#contact" class="btn">contact us</a>
+    </div>
+
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h01.jpg') }}" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h02.jpg') }}" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h03.jpg') }}" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h04.jpg') }}" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h05.jpg') }}" alt=""></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='h06.jpg') }}" alt=""></div>
+        </div>
+    </div>
+</section>
+{% endblock home %}
+
+{% block services %}
+<section class="service" id="service">
+    <h1 class="heading"> our <span>services</span></h1>
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>venue selection</h3>
+            <p>The best places in Moscow to get your party affordable</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+            <h3>invitation card</h3>
+            <p>Guests will receive a especial card by mail to enjoy the party</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-music"></i>
+            <h3>entertaiment</h3>
+            <p>A selected DJ set with the most popular latin music</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-martini-glass-citrus"></i>
+            <h3>world class drinks</h3>
+            <p>mojito, cuba libre, margarita. the most loved drinks in latin america</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-photo-video"></i>
+            <h3>photos and videos</h3>
+            <p>photo zone with beautiful decoration to make the moment memorable</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-burger"></i>
+            <h3>pizza and snacks</h3>
+            <p>pizza arrives!!!! come and taste one piece</p>
+        </div>
+
+    </div>
+</section>
+{% endblock services %}
+
+{% block about %}
+<section class="about" id="about">
+    <h1 class="heading"><span>about</span> us </h1>
+    <div class="row">
+        <div class="image">
+            <img src="{{ url_for('static', filename='h02.jpg') }}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Don't miss the opportunity to live the real fiesta latina</h3>
+            <p>Come and live the experience of the real fiesta latina as in Varadero, Cartagena, Punta Cana, Cancún and more</p>
+            <p>La fiesta latina se vive en México, Colombia, Cuba, Panamá, Costa Rica and now in Moscow</p>
+            <a href="#contact" class="btn">contact us</a>
+        </div>
+    </div>
+</section>
+{% endblock about %}
+
+{% block prices %}
+<section class="price" id="price">
+
+    <h1 class="heading">next <span>events</span> </h1>
+
+    <div class="box-container">
+
+        {% for row in data %}
+        <div class="box">
+            <!-- <h3 class="title">lucky latino party</h3> -->
+            <h3 class="title">{{ row[0] }}</h3>
+            <!-- <h3 class="date">comming soon</h3>  -->
+            <h3 class="date">{{ row[1] }}</h3>
+            <h3 class="price">{{ row[2] }} &#8381</h3>
+            <ul>
+                <li><i class="fas fa-check"></i>selected loft</li>
+                <li><i class="fas fa-check"></i>1 free drink</li>
+                <li><i class="fas fa-check"></i>DJ Metizi</li>
+                <li><i class="fas fa-check"></i>photo zone</li>
+                <li><i class="fas fa-check"></i>pizza and drinks</li>
+                <li><i class="fas fa-check"></i>invitation card</li>
+            </ul>
+            <a href="#" class="btn">join</a>
+        </div>
+        {% endfor %} 
+        
+    </div>
+</section>
+{% endblock prices %}
+
+{% block contact_form %}
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>contact</span> us </h1>
+
+    <form action="">
+
+        <div class="inputBox">
+            <input type="text" placeholder="name">
+            <input type="email" placeholder="email">
+        </div>
+
+        <div class="inputBox">
+            <input type="number" placeholder="phone number">
+            <input type="text" placeholder="subject">
+        </div>
+
+        <textarea name="" placeholder="your message" cols="30" rows="10"></textarea>
+        
+        <input type="submit" value="send message" class="btn">
+
+    </form>
+</section>
+{% endblock contact_form %}
