@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    
-    {% block title %}<title>Jaguar Latino Events</title> {% endblock title %}
-
     {% endblock head %}
 
 </head>
@@ -23,22 +20,6 @@
 <body>
 
 {% block header %}
-<header class="header">
-    
-    <a href="#" class="logo"><span>J</span>aguar <span>L</span>atino <span>E</span>vents</a>
-
-    <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#service">services</a>
-        <a href="#about">about</a>
-        <a href="#price">events</a>
-        <a href="#contact">contact</a>
-        <a href="#home">login</a>
-    </nav>
-
-    <div id="menu-bars" class="fas fa-bars"></div>
-
-</header>
 {% endblock header %}
 
 {% block page_content %}
@@ -68,11 +49,11 @@
 
             <h3>quick links</h3>
 
-            <a href="#home"> <i class="fas fa-arrow-right"></i> Home</a>
-            <a href="#service"> <i class="fas fa-arrow-right"></i> Services</a>
-            <a href="#about"> <i class="fas fa-arrow-right"></i> About</a>
-            <a href="#price"> <i class="fas fa-arrow-right"></i> Events</a>
-            <a href="#contact"> <i class="fas fa-arrow-right"></i> Contact</a>
+            <a href="/#home"> <i class="fas fa-arrow-right"></i> Home</a>
+            <a href="/#service"> <i class="fas fa-arrow-right"></i> Services</a>
+            <a href="/#about"> <i class="fas fa-arrow-right"></i> About</a>
+            <a href="/#price"> <i class="fas fa-arrow-right"></i> Events</a>
+            <a href="/#contact"> <i class="fas fa-arrow-right"></i> Contact</a>
 
         </div>
 

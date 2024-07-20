@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Login</title> {% endblock title %}
+
+{% block header %}
+<header class="header">
+    
+    <a href="#" class="logo"><span>J</span>aguar <span>L</span>atino <span>E</span>vents</a>
+
+    <nav class="navbar">
+        <a href="/#home">home</a>
+        <a href="/#service">services</a>
+        <a href="/#about">about</a>
+        <a href="/#price">events</a>
+        <a href="/#contact">contact</a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+</header>
+{% endblock header %}
+
+{% block page_content %}
+
+<div class="login-container">
+    <div class="wrapper">
+        <div class="form-wrapper sign-in">
+            <form method="POST" action="/login">
+                <h2>Login</h2>
+                <!-- <h3>User not found</h3> -->
+                {% if error %}
+                    <h3>{{error}}</h3>
+                {% endif %}
+                <div class="input-group">
+                    <input type="text" name="demail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="dpassword" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Remember Me</label>
+                </div>
+                <button type="submit" value="Login">Login</button>
+                <div class="signUp-link">
+                    <p>
+                        Don't have an account? <a href="#" class="signUpBtn-link">
+                            Sign Up
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-wrapper sign-up">
+            <form  method="POST" action="/signup">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" name="duser" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="demail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="dpassword" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> I agree with the terms & conditions</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="signUp-link">
+                    <p>
+                        Already have an account? <a href="#" class="signInBtn-link">
+                            Sign In
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}

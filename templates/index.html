@@ -1,6 +1,48 @@
 {% extends "base.html" %}
 
-{% block title %} <title>Inicio</title> {% endblock title %}
+{% block title %} <title>Init</title> {% endblock title %}
+
+{% block header %}
+<header class="header">
+    
+    <a href="#" class="logo"><span>J</span>aguar <span>L</span>atino <span>E</span>vents</a>
+
+    <nav class="navbar">
+        <a href="/#home">home</a>
+        <a href="/#service">services</a>
+        <a href="/#about">about</a>
+        <a href="/#price">events</a>
+        <a href="/#contact">contact</a>
+        {% if username %}
+            <!-- <a href="/logout" class="logged-user">Welcome, {{username}}</a> -->
+            <button class="logout-btn" onclick="toggleMenu()">Welcome, {{username}}</button>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <a href="#" class="sub-menu-link">
+                        <p>Edit Profile</p>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>My Orders</p>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <p>Shopping Cart</p>
+                    </a>
+                    <a href="/logout" class="sub-menu-link">
+                        <p>Logout</p>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <!-- <a href="/login">Login</a> -->
+            <button class="login-btn" onclick="document.location='/login'">Login</button>
+        {% endif %}
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+</header>
+{% endblock header %}
 
 {% block home %}
 <section class="home" id="home">
@@ -139,3 +181,11 @@
     </form>
 </section>
 {% endblock contact_form %}
+
+
+{% block scripts %}
+{% if username %}
+{{super()}}
+<script src="{{ url_for('static', filename='user_menu.js') }}"></script>
+{% endif %}
+{% endblock scripts %}
