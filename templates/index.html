@@ -9,9 +9,9 @@
 
     <nav class="navbar">
         <a href="/#home">home</a>
+        <a href="/#price">events</a>
         <a href="/#service">services</a>
         <a href="/#about">about</a>
-        <a href="/#price">events</a>
         <a href="/#contact">contact</a>
         {% if username %}
             <!-- <a href="/logout" class="logged-user">Welcome, {{username}}</a> -->
@@ -63,6 +63,41 @@
     </div>
 </section>
 {% endblock home %}
+
+{% block prices %}
+<section class="price" id="price">
+
+    <h1 class="heading">next <span>events</span> </h1>
+
+    <div class="box-container">
+
+        {% for row in data %}
+        <div class="box">
+            <!-- <h3 class="title">lucky latino party</h3> -->
+            <h3 class="title">{{ row[0] }}</h3>
+            <!-- <h3 class="date">comming soon</h3>  -->
+            <h3 class="date">{{ row[1] }}</h3>
+            <h3 class="price">{{ row[2] }} &#8381</h3>
+            <ul>
+                <li><i class="fas fa-check"></i>selected loft</li>
+                <li><i class="fas fa-check"></i>1 free drink</li>
+                <li><i class="fas fa-check"></i>DJ Metizi</li>
+                <li><i class="fas fa-check"></i>photo zone</li>
+                <li><i class="fas fa-check"></i>pizza and drinks</li>
+                <li><i class="fas fa-check"></i>invitation card</li>
+            </ul>
+            <a href="#" class="btn">join</a>
+        </div>
+        {% endfor %} 
+        
+    </div>
+
+    <div class="more_events">
+        <a href="#prices" class="btn">more events</a>
+    </div>
+
+</section>
+{% endblock prices %}
 
 {% block services %}
 <section class="service" id="service">
@@ -126,36 +161,6 @@
     </div>
 </section>
 {% endblock about %}
-
-{% block prices %}
-<section class="price" id="price">
-
-    <h1 class="heading">next <span>events</span> </h1>
-
-    <div class="box-container">
-
-        {% for row in data %}
-        <div class="box">
-            <!-- <h3 class="title">lucky latino party</h3> -->
-            <h3 class="title">{{ row[0] }}</h3>
-            <!-- <h3 class="date">comming soon</h3>  -->
-            <h3 class="date">{{ row[1] }}</h3>
-            <h3 class="price">{{ row[2] }} &#8381</h3>
-            <ul>
-                <li><i class="fas fa-check"></i>selected loft</li>
-                <li><i class="fas fa-check"></i>1 free drink</li>
-                <li><i class="fas fa-check"></i>DJ Metizi</li>
-                <li><i class="fas fa-check"></i>photo zone</li>
-                <li><i class="fas fa-check"></i>pizza and drinks</li>
-                <li><i class="fas fa-check"></i>invitation card</li>
-            </ul>
-            <a href="#" class="btn">join</a>
-        </div>
-        {% endfor %} 
-        
-    </div>
-</section>
-{% endblock prices %}
 
 {% block contact_form %}
 <section class="contact" id="contact">

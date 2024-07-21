@@ -326,6 +326,12 @@ section {
     padding-right: .5rem;
 }
 
+.price .more_events {
+    display: grid;
+    place-content: center;
+    padding-top: 10px;
+}
+
 /* --------------- Contact form ----------------------*/
 
 .contact form {
